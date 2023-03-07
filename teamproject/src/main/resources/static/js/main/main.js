@@ -6,7 +6,7 @@ const img=document.createElement('img');
 
 
 
-img.src='/static/img/main/main1.jpg';
+img.src='/img/main/main1.jpg';
 img.alt='album number1';
 imageContainer.appendChild(img);
 
@@ -16,7 +16,7 @@ function toForward(){
         i=1;
     }
 
-    img.src=`/static/img/main/main${i}.jpg`;
+    img.src=`/img/main/main${i}.jpg`;
     img.alt="album number"+`${i}`;
     imageContainer.appendChild(img);
         
@@ -27,7 +27,7 @@ function toForward(){
 function toBackward(){
     let source=imageContainer.childNodes[0].src;
     console.log(`Current source : ${source}`);
-    source =  `http://127.0.0.1:5500/static/img/main/main${i-1}.jpg`;
+    source =  `http://127.0.0.1:5500/img/main/main${i-1}.jpg`;
     console.log(`Previous source: ${source}`);
 
 }

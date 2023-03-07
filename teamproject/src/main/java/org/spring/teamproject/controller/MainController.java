@@ -1,7 +1,11 @@
 package org.spring.teamproject.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.spring.teamproject.dto.ItemDto;
 import org.spring.teamproject.dto.MemberDto;
+import org.spring.teamproject.entity.ItemEntity;
+import org.spring.teamproject.repository.ItemRepository;
+import org.spring.teamproject.service.ItemService;
 import org.spring.teamproject.service.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,13 +13,23 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class MainController {
+
     private final MemberService memberService;
+    private final ItemService itemService;
+
+
     @GetMapping({"/", "", "/index"})                    //기본페이지설정
-    public String index() {
+    public String index(Model model) {
+
+        List<ItemDto> itemDtoList=itemService.itemList();
+
+        model.addAttribute("itemDtoList",itemDtoList);
+
         return "/pages/main";
     }
 

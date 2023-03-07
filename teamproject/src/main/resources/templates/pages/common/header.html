@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <script src="/static/js/common/header.js" defer></script>
+    <script src="/js/common/header.js" defer></script>
 </head>
 
-<!--<div class="header" th:insert="/pages/common/Header :: header">-->
-    <div class="header-con" th:fragment="header">
+<div class="header" th:fragment="header">
+    <div class="header-con">
         <div class="gnb">
-            <div class="logo"><a th:href="@{/home}"><img src="/static/img/common/head/infinity.png" alt="LogoImage"></a>
+            <div class="logo"><a th:href="@{/}"><img src="/img/common/head/infinity.png" alt="LogoImage"></a>
             </div>
             <div class="main-menu-con">
                 <ul>
@@ -16,7 +16,7 @@
                         <div class="li-con">
                             <div class="left-menu">
                                 <ul>
-                                    <li><a th:href="@{/page/itemList}">Tracks</a></li>
+                                    <li><a th:href="@{/trackList}">Tracks</a></li>
                                     <li><a th:href="@{/#}">Works</a></li>
                                     <li><a th:href="@{/#}">FAQ</a></li>
                                     <li><a th:href="@{/#}">About</a></li>
@@ -28,29 +28,17 @@
                             </div>
                         </div>
                         <div class="s-img">
-                            <img src="/static/img/common/head/magnifier.png" alt="searchImg" id="magnifier">
+                            <img src="/img/common/head/magnifier.png" alt="searchImg" id="magnifier">
                         </div>
                     </li>
-                    <!-- 비로그인시 -->
-                    <li class="li-last" sec:authorize="isAnonymous()">
-                        <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
-                        <!--로그인a태그   -->
-                        <a th:href="@{/login}"><img src="/img/head/login.png" alt="login"></a>
+                    <li class="li-last">
+                        <a th:href="@{/#}">
+                            <img src="/img/common/head/shopping-bag.png" alt="shoppingBag">
+                        </a>
+                        <a th:href="@{/#}">
+                            <img src="/img/common/head/login.png" alt="login">
+                        </a>
                     </li>
-                    <!-- 로그인시 -->
-                    <li class="li-last" sec:authorize="isAuthenticated()">
-                        <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
-                        <!--마이페이지 a태그-->
-                        <a th:href="@{|/member/mypage/${#authentication.principal.username}|}"><img src="/img/head/login.png"></a>
-                    </li>
-<!--                    <li class="li-last">-->
-<!--                        <a th:href="@{/#}">-->
-<!--                            <img src="/static/img/common/head/shopping-bag.png" alt="shoppingBag">-->
-<!--                        </a>-->
-<!--                        <a th:href="@{/#}">-->
-<!--                            <img src="/static/img/common/head/login.png" alt="login">-->
-<!--                        </a>-->
-<!--                    </li>-->
                 </ul>
             </div>
         </div>
