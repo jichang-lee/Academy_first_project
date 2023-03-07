@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title th:text="${detail.title}"></title>
-  <link rel="stylesheet" th:href="@{/css/detailView.css}">
+  <link rel="stylesheet" th:href="@{/css/common/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/board/detailView.css}">
+  <link rel="stylesheet" th:href="@{/css/board/comment.css}">
 </head>
 
 <body>
@@ -24,7 +26,10 @@
             <span th:text="*{#temporals.format(detail.createTime, 'HH:mm:ss')}">작성시간</span>
           </div>
           <div class="content" th:text="${detail.content}">내용</div>
-          <img th:src="@{|/upload/${detail.newName}|}" alt="">
+          <!--유튜브 영상 링크 송출-->
+          <div id="player"></div>
+          <input hidden="hidden" th:value="${youtube}" id="youtube">
+          <img th:src="@{|/upload/${detail.newName}|}" alt="user upload image">
         </div>
 
         <div class="btns">
@@ -35,21 +40,24 @@
             <div class="back">
               <a th:href="@{/board/}">BACK</a>
             </div>
-            <div class="memberonly" sec:authorize="hasAnyRole('ADMIN','MEMBER')">
-              <!--안 먹음-->
+            <div class="memberonly" sec:authorize="isAuthenticated()">
+              <!--회원 일치하는지만 처리, 관리자 접근 권한X-->
+              <th:block th:if="${#authentication.principal.username} == ${detail.writer}">
+                <a th:href="@{|/board/update/${detail.no}|}">MODIFY</a>
+                <a th:href="@{|/board/delete/${detail.no}|}">DELETE</a>
+              </th:block>
               <!--th:if="${#authentication.principal.userName} == ${detail.userName}"-->
-              <a th:href="@{|/board/update/${detail.no}|}">MODIFY</a>
-              <a th:href="@{|/board/delete/${detail.no}|}">DELETE</a>
+              <!--th:unless="${#authorization.expression('hasRole('ADMIN')')}"-->
             </div>
           </div>
 
         </div>
 
       </div>
-
-      <!--댓글창 붙이기-->
     </div>
   </div>
+  <!--댓글창-->
+  <div th:insert="/pages/board/postComment :: commentContainer"></div>
 </body>
 
 </html>

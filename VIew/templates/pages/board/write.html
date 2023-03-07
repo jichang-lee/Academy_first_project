@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>WRITE</title>
-  <link rel="stylesheet" th:href="@{/css/write.css}">
+  <link rel="stylesheet" th:href="@{/css/common/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/board/write.css}">
 </head>
 
 <body>
@@ -36,8 +37,7 @@
             <!-- <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li> -->
 
             <li>
-              <input type="text" th:text="${userName.username}" th:field=" *{writer}">
-              <!--writer를 회원 이름으로 받기(th:text="${.userName}") 안 가져와짐-->
+              <input type="text" th:value="${userName}" id="writer" name="writer" readonly hidden>
             </li>
 
             <li class="li4">

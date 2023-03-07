@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>COMMUNITY</title>
-  <link rel="stylesheet" th:href="@{/css/list.css}">
+  <link rel="stylesheet" th:href="@{/css/common/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/board/list.css}">
 </head>
 
 <body>
@@ -50,7 +51,9 @@
         <div class="end-item">
           <!--페이징, 검색-->
           <div class="write-btn" sec:authorize="isAuthenticated()">
-            <a th:href="@{/board/write}">WRITE</a>
+            <th:block th:classappend="${#authorization.expr('isAnonymous()')} ? 'write-prohibit'">
+              <a th:href="@{/board/write}">WRITE</a>
+            </th:block>
           </div>
 
           <div class="paging">

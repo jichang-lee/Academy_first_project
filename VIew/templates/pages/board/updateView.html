@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>MODIFY</title>
-  <link rel="stylesheet" th:href="@{/css/updateView.css}">
+  <link rel="stylesheet" th:href="@{/css/common/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/board/updateView.css}">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             </li>
 
             <li class="li3">
-              <textarea name="content" th:value="${detail.content}" id="content" cols="30" rows="10" required>
+              <textarea name="content" th:text="${detail.content}" id="content" cols="30" rows="10" required>
               <img th:src="@{|/upload/${detail.newName}|}" alt=""></textarea>
             </li>
             <!-- <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li> -->
