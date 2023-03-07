@@ -12,6 +12,10 @@ function changeSelect(event) {
 		if (idx == 2) s3 = el.children[0].value;
 	});
 }
+let userCart =  document.querySelector("#userCart");
+userCart.addEventListener("click",()=>{
+    alert("장바구니에 등록 되었습니다.")
+});
 //function searchTracksAjax() {
 //	const listNumber = document.querySelector("#listNumber").value;
 //

@@ -5,10 +5,13 @@ import org.spring.teamproject.dto.ItemDto;
 import org.spring.teamproject.dto.MemberDto;
 import org.spring.teamproject.service.CartService;
 import org.spring.teamproject.service.ItemService;
+import org.spring.teamproject.service.MemberService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +26,7 @@ public class TrackController {
 
     private final ItemService itemService;
     private final CartService cartService;
+    private final MemberService memberService;
     // track 추가
     @GetMapping("/trackAdd")
     public String addView(Model model) {
@@ -53,11 +57,19 @@ public class TrackController {
         if(search==null){
             Page<ItemDto> list =itemService.itemPage(pageable);
 
+            Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+            String email = authentication.getName();
+            MemberDto memberDto= memberService.memberDetail(email);
+
             Long total=list.getTotalElements(); // 전체 레코드 수
             int bockNum=4;
             int nowPage= list.getNumber()+1 ;// 현재페이지-> boardList.getNumber()는 0부터 시작
             int startPage=Math.max(1,list.getNumber()-bockNum); //시작페이지 -> 기본이 최소 1페이지
             int endPage=list.getTotalPages(); // 마지막페이지
+
+            if(memberDto!=null) {
+                model.addAttribute("member", memberDto.getNo());
+            }
 
             model.addAttribute("list",list);
             model.addAttribute("total",total);

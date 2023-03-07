@@ -33,9 +33,9 @@ public class CartController {
 
 
 
-    @GetMapping("/cart/{memberNo}")
-    public String cartView(@PathVariable Long memberNo, Model model){
-        cartService.memberCartView(memberNo);
+    @GetMapping("/cart")
+    public String cartView( Model model){
+
 
         List<CartItemDto> cartItemDtos= cartService.cartVIew();
 

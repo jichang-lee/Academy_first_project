@@ -38,7 +38,7 @@
               <div class="action">
                 <div class="action1" th:each="list: ${dto}">
                   <form th:action="@{|/cart/${memberNo}/${itemNo}|}" method="post">
-                  <button type="submit" ><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
+                  <button type="submit"id="userCart" ><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
                       th:text="${list.price}"></button>
                   </form>
                 </div>

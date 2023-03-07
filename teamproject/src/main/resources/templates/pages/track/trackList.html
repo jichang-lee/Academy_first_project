@@ -76,17 +76,33 @@
           </ul>
         </div>
         <div class="items">
+
           <ul th:each="list: ${list}">
             <li><img src="/img/track/music.png" alt=""></li>
-            <a th:href="@{|/trackDetail/${list.no}|}">
+            <a th:if="${member !=null}" th:href="@{|/trackDetail/${list.no}/${member}|}">
               <li th:text="${list.title}"></li>
             </a>
+
+            <a th:if="${member ==null}" th:href="@{/login}">
+              <li th:text="${list.title}"></li>
+            </a>
+
             <li th:text="${list.duration}"></li>
             <li th:text="${list.bpm}"></li>
             <li th:text="${list.producer}"></li>
             <li th:text="${list.genre}"></li>
-            <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"></a>
-              <div th:text="${list.price}"></div>
+            <li>
+              <form th:action="@{|/cart/${member}/${list.no}|}" method="post">
+                <a th:if="${member == null}" th:href="@{/login}" > <!--member아닐시-->
+                  <img src="/img/track/shopping-bag.png" alt="shopping-bag-icon">
+                  <div th:text="${list.price}"></div>
+                </a>
+
+                <button th:if="${member != null}" type="submit" id="userCart" name="userCart"> <!--멤버일 시-->
+                  <img src="/img/track/shopping-bag.png" alt="shopping-bag-icon">
+                  <div th:text="${list.price}"></div>
+                </button>
+              </form>
             </li>
           </ul>
         </div>
