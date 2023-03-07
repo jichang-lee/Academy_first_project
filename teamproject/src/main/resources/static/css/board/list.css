@@ -1,44 +1,34 @@
-@import url(/static/css/common/reset.css);
-/* detail의 css */
-@import url(/static/css/board/detailView.css);
-/* write의 css */
-@import url(/static/css/board/write.css);
-/* comment의 css */
-@import url(/static/css/board/comment.css);
-/* header의 css */
-@import url(/static/css/common/header.css);
-/* footer의 css */
-@import url(/static/css/common/footer.css);
+/* @font-face {
+  font-family: 'Helvetica';
+  src: url('/static/font/Helvetica.ttf') format(‘truetype’);
+} */
 
-/* Detail 내용 안보이게 하기*/
-.hide{
-  visibility: hidden;
-  position: absolute;
+.body {
+  font-family: "Poppins", Helvetica, sans-serif;
 }
 
-.listsContainer {
+.container {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   /* border: 1px solid; */
-  position: relative;
 }
 
-/* 전체 리스트 */
-.listsContainer .listsContainer-con {
-  width: 1166px;
+.container .container-con {
+  width: 100%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
   padding: 5px 20px;
   box-sizing: border-box;
-  box-sizing: border-box;
+  /* border: 1px solid; */
 }
 
-.listsContainer .listsContainer-con .title {
+.container .container-con .title {
   width: 100%;
+  color: #000000;
   text-align: center;
   font-family: "Poppins", Helvetica, sans-serif;
   font-weight: 900;
@@ -48,24 +38,23 @@
   /* border: 1px solid; */
 }
 
-.listsContainer .listsContainer-con .boardview {
-  width: 100%;
+.container .container-con .boardview {
+  width: 100;
   flex: 1;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo {
+.container .container-con .boardview .boardinfo {
   width: 100%;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul {
+.container .container-con .boardview .boardinfo>ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* padding: 10px 30px; */
   color: #696969;
   font-weight: bold;
   font-size: small;
@@ -73,134 +62,125 @@
   /* border: 1px solid; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul li {
+.container .container-con .boardview .boardinfo>ul li {
   text-align: center;
   padding: 10px 20px;
+  font-family: "Poppins", Helvetica, sans-serif;
   box-sizing: border-box;
-  border-bottom: 1px solid #7a7a7a;
+  border-bottom: 1px solid #a1a1a1;
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(1) {
+.container .container-con .boardview .boardinfo>ul li:nth-child(1) {
   flex: 1;
-  /* width: 80px; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(2) {
+.container .container-con .boardview .boardinfo>ul li:nth-child(2) {
   flex: 20;
-  /* width: 750px; */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   word-break: break-all;
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(3) {
+.container .container-con .boardview .boardinfo>ul li:nth-child(3) {
   flex: 2;
-  /* width: 150px; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(4) {
+.container .container-con .boardview .boardinfo>ul li:nth-child(4) {
   flex: 1;
-  /* width: 80px; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(5) {
-  flex: 3;
-  /* width: 150px; */
+.container .container-con .boardview .boardinfo>ul li:nth-child(5) {
+  flex: 2;
 }
 
 
-.listsContainer .listsContainer-con .boardview .boardlist {
+.container .container-con .boardview .boardlist {
   width: 100%;
-  /* background-color: #dfdfdfcf; */
-  height: 500px;
+  height: 450px;
   box-sizing: border-box;
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul {
+.container .container-con .boardview .boardlist>ul {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  /* border: 1px solid; */
+  border-bottom: 1px dotted #c0c0c0;
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul li {
+.container .container-con .boardview .boardlist>ul li {
   text-align: center;
   padding: 5px 20px;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: smaller;
   box-sizing: border-box;
   /* border: 1px solid #cccccc; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(1) {
-  /* flex: 0 0 30px; */
+.container .container-con .boardview .boardlist>ul li:nth-child(1) {
   flex: 1;
-  /* width: 80px; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(2) {
+.container .container-con .boardview .boardlist>ul li:nth-child(2) {
   flex: 20;
-  /* width: 750px; */
-  /*말줄임 css*/
+  /*말 줄임 css->제목 길이가 지정된 영역을 초과하면 ...으로 표시*/
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   word-break: break-all;
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(3) {
+.container .container-con .boardview .boardlist>ul li:nth-child(3) {
   flex: 2;
-  /* width: 150px; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(4) {
-  /* flex: 0 0 30px; */
+.container .container-con .boardview .boardlist>ul li:nth-child(4) {
   flex: 1;
-  /* width: 80px; */
 }
 
-.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(5) {
-  flex: 3;
-  /* width: 150px; */
+.container .container-con .boardview .boardlist>ul li:nth-child(5) {
+  flex: 2;
 }
 
-.listsContainer .listsContainer-con .listsContainer-end {
-  /* border: 1px solid; */
-  /* display: flex;
-  justify-content: space-between; */
+.container .container-con .container-end {
   padding: 10px;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.listsContainer .listsContainer-con .listsContainer-end .end-item {
-  /* border: 1px solid #000000; */
+.container .container-con .container-end .end-item {
   display: flex;
   justify-content: space-between;
 }
 
-.listsContainer .listsContainer-con .listsContainer-end .end-item>a {
-  flex: 0 0 65px;
-  line-height: 30px;
-  text-align: center;
+.container .container-con .container-end .end-item .write-btn {
+  width: 70px;
+  height: 30px;
   background-color: #000000;
+  border-radius: 3px 3px 3px 3px;
+  text-align: center;
+}
+
+.container .container-con .container-end .end-item .write-btn>a {
+  /* flex: 0 0 65px; */
+  line-height: 30px;
   color: #ffffff;
   font-size: small;
   font-weight: bold;
-  border-radius: 3px 3px 3px 3px;
   box-sizing: border-box;
   /* border: 1px solid #000000; */
 }
 
-.listsContainer .listsContainer-con .listsContainer-end .end-item>form {
-  /* border: 1px solid #000000; */
+.container .container-con .container-end .end-item .search-form>form {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   align-items: center;
   box-sizing: border-box;
+  /* border: 1px solid #000000; */
 }
 
-.listsContainer .listsContainer-con .listsContainer-end .end-item>form>select {
+.container .container-con .container-end .end-item .search-form>form>select {
   width: 70px;
   height: 30px;
   border: none;
@@ -212,7 +192,7 @@
   font-size: small;
 }
 
-.listsContainer .listsContainer-con .listsContainer-end .end-item>form>input.searchtext {
+.container .container-con .container-end .end-item .search-form>form>input.searchtext {
   width: 150px;
   height: 30px;
   padding: 10px;
@@ -223,7 +203,7 @@
   border-radius: 3px 3px 3px 3px;
 }
 
-.listsContainer .listsContainer-con .listsContainer-end .end-item>form.submitbtn {
+.container .container-con .container-end .end-item .search-form>form.submitbtn {
   border: 1px solid #000000;
   width: 24px;
   height: 24px;
@@ -232,8 +212,26 @@
   align-items: center;
 }
 
-/* .listsContainer .listsContainer-con .listsContainer-end .end-item>form>a img {
-  width: 100%;
-  height: auto;
-  display: block;
-} */
+.container .container-con .container-end .end-item .paging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: smaller;
+  padding: 0 50px;
+  gap: 10px;
+}
+
+.container .container-con .container-end .end-item .paging .nowPage {
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 1px 2px 10px 1px rgba(138, 138, 138, 0.34);
+}
+
+.container .container-con .container-end .end-item .paging>a>img {
+  width: 24px;
+  height: 24px;
+}

@@ -1,78 +1,82 @@
-@import url(/static/css/common/reset.css);
-
-.detailContainer {
+.container {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  row-gap: 10px;
   box-sizing: border-box;
-
   /* border: 1px solid; */
 }
 
-.detailContainer .detailContainer-con {
-  width: 1166px;
-  margin: 40px;
-  height: auto;
-  flex: 1 0 70%;
+.container .container-con {
+  width: 100%;
+  margin: 20px;
+  flex: 0 0 70%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   align-items: center;
   box-sizing: border-box;
   /* border: 1px solid #ff0000; */
 }
 
-.detailContainer .detailContainer-con .board-con {
-  width: 100%;
+.container .container-con .board-con {
+  width: 1125px;
   height: auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   /* border: 1px solid #0000ff; */
 }
 
-.detailContainer .detailContainer-con .board-con .boardview {
-  width: 100%;
-  /* padding: 40px; */
-  height: auto;
+.container .container-con .board-con .boardview {
+  width: inherit;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.detailContainer .detailContainer-con .board-con .boardview>ul {
+.container .container-con .board-con .boardview .title {
   width: inherit;
-}
-
-.detailContainer .detailContainer-con .board-con .boardview>ul>h3 {
   margin: 0 0 15px 0;
+  font-family: "Poppins", Helvetica, sans-serif;
 }
 
-.detailContainer .detailContainer-con .board-con .boardview>ul>.li1>span>img {
-  width: 20px;
-  height: 20px;
-}
-
-.detailContainer .detailContainer-con .board-con .boardview>ul>.li1 {
+.container .container-con .board-con .boardview .write-info {
   display: flex;
   justify-content: space-between;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: smaller;
   border-bottom: 1px solid #b7b7b7;
   margin: 0 0 10px 0;
   padding: 5px;
   box-sizing: border-box;
 }
 
-.detailContainer .detailContainer-con .board-con .btns>ul>.btnli1 {
+.container .container-con .board-con .boardview .write-info .writer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.container .container-con .board-con .boardview .write-info .writer>img {
+  width: 20px;
+  height: 20px;
+}
+
+.container .container-con .board-con .boardview .content {
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: medium;
+}
+
+.container .container-con .board-con .btns .like {
   display: flex;
   justify-content: center;
   margin: 30px;
 }
 
-.detailContainer .detailContainer-con .board-con .btns>ul>.btnli1>input {
+.container .container-con .board-con .btns .like>input {
   width: 85px;
   line-height: 25px;
   border-radius: 5px 5px 5px 5px;
@@ -82,29 +86,48 @@
   transition: 0.3s;
 }
 
-.detailContainer .detailContainer-con .board-con .btns>ul>.btnli1>input:hover {
+.container .container-con .board-con .btns .like>input:hover {
   cursor: pointer;
   background-color: #e4e4e4;
   color: black;
 }
 
-.detailContainer .detailContainer-con .board-con .btns>ul>.btnli2 {
+.container .container-con .board-con .btns .btns-sub {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 5px;
 }
 
-.detailContainer .detailContainer-con .board-con .btns>ul>.btnli2>input {
+.container .container-con .board-con .btns .btns-sub .back {
   border: none;
   width: 70px;
-  line-height: 35px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 3px 3px 3px 3px;
   background-color: black;
+  box-sizing: border-box;
+}
+
+.container .container-con .board-con .btns .btns-sub .back>a {
   color: #ffffff;
   font-size: small;
   font-weight: bold;
 }
 
-.detailContainer .detailContainer-con .board-con .btns>ul>.btnli2>input:hover {
-  cursor: pointer;
+.container .container-con .board-con .btns .memberonly {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.container .container-con .board-con .btns .memberonly>a {
+  border: none;
+  width: 70px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px 3px 3px 3px;
+  background-color: black;
+  color: #ffffff;
+  font-size: small;
+  font-weight: bold;
 }
