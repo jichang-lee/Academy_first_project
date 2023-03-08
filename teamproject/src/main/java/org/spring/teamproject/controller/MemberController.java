@@ -7,19 +7,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/member")
 public class MemberController {
     private final MemberService memberService;
     @GetMapping("/mypage/{email}")                           //나의 정보 가져온 후 mypage 입장
-    public String membermypage(@PathVariable("email") String email, Model model) {
+    public String membermypage(@PathVariable String email, Model model) {
         MemberDto memberDto = memberService.memberDetail(email);
         model.addAttribute("member", memberDto);
         return "/pages/member/mypage";
     }
     @GetMapping("/update/{email}")                           //나의 정보를 가져가서 회원수정페이지 입장
-    public String info(@PathVariable("email") String email, Model model) {
+    public String info(@PathVariable String email, Model model) {
         MemberDto memberDto = memberService.memberDetail(email);
         model.addAttribute("member", memberDto);
         return "/pages/member/update";
@@ -30,7 +32,7 @@ public class MemberController {
         return "redirect:/";
     }
     @GetMapping("/delete/{no}")                             //회원 탈퇴후 security logout
-    public String delete(@PathVariable(value = "no") Long no) {
+    public String delete(@PathVariable Long no) {
         int rs = memberService.deleteOk(no);
         if (rs == 1) {
             System.out.println("회원탈퇴 실패");
@@ -39,4 +41,11 @@ public class MemberController {
         System.out.println("회원탈퇴 성공");
         return "redirect:/logout";
     }
+    @GetMapping("/memberList")
+    public String memberList(Model model){
+        List<MemberDto> memberList=memberService.memberListDo();
+        model.addAttribute("memberList",memberList);
+        return "/pages/member/memberList";
+    }
+
 }

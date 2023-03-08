@@ -33,16 +33,16 @@ public class ItemService {
 
     }
 
-//    public List<ItemDto> itemList() {
-//        List<ItemDto> itemDtoList=new ArrayList<>();
-//
-//        List<ItemEntity> itemEntityList=itemRepository.findAll();
-//
-//        for(ItemEntity itemEntity:itemEntityList){
-//            itemDtoList.add(ItemDto.toItemDto(itemEntity));
-//        }
-//        return itemDtoList;
-//    }
+    public List<ItemDto> itemList() {
+        List<ItemDto> itemDtoList=new ArrayList<>();
+
+        List<ItemEntity> itemEntityList=itemRepository.findAll();
+
+        for(ItemEntity itemEntity:itemEntityList){
+            itemDtoList.add(ItemDto.toItemDto(itemEntity));
+        }
+        return itemDtoList;
+    }
     // 트랙 목록 페이징
     public Page<ItemDto> itemPage(Pageable pageable) {
         Page<ItemEntity> itemEntities=itemRepository.findAll(pageable);

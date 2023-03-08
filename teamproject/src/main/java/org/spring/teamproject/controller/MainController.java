@@ -55,7 +55,7 @@ public class MainController {
         return rs;
     }
     @GetMapping("/login")                               //로그인
-    public String login(Model model) {
+    public String login() {
         System.out.println("로그인 성공");
         return "/pages/member/login";
     }

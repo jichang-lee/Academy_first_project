@@ -32,13 +32,25 @@
                             <img src="/img/common/head/magnifier.png" alt="searchImg" id="magnifier">
                         </div>
                     </li>
-                    <li class="li-last">
-                        <a th:href="@{/cart}"sec:authorize="hasAnyRole('ADMIN','MEMBER')" >
-                            <img src="/img/common/head/shopping-bag.png" alt="shoppingBag">
-                        </a>
-                        <a th:href="@{/#}">
-                            <img src="/img/common/head/login.png" alt="login">
-                        </a>
+<!--                    <li class="li-last">-->
+<!--                        <a th:href="@{/cart}"sec:authorize="hasAnyRole('ADMIN','MEMBER')" >-->
+<!--                            <img src="/img/common/head/shopping-bag.png" alt="shoppingBag">-->
+<!--                        </a>-->
+<!--                        <a th:href="@{/#}">-->
+<!--                            <img src="/img/common/head/login.png" alt="login">-->
+<!--                        </a>-->
+<!--                    </li>-->
+                    <!-- 비로그인시 -->
+                    <li class="li-last" sec:authorize="isAnonymous()">
+                        <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
+                        <!--로그인a태그   -->
+                        <a th:href="@{/login}"><img src="/img/head/login.png" alt="login"></a>
+                    </li>
+                    <!-- 로그인시 -->
+                    <li class="li-last" sec:authorize="isAuthenticated()">
+                        <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
+                        <!--마이페이지 a태그-->
+                        <a th:href="@{|/member/mypage/${#authentication.principal.username}|}"><img src="/img/head/login.png"></a>
                     </li>
                 </ul>
             </div>

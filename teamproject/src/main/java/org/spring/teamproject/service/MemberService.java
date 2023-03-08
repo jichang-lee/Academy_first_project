@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -56,5 +58,14 @@ public class MemberService {
             return 0;
         }
         return 1;
+    }
+    public List<MemberDto> memberListDo() {   //회원리스트
+        List<MemberDto> memberDtoList=new ArrayList<>();
+        List<MemberEntity> memberEntityList=memberRepository.findAll();
+
+        for (MemberEntity memberEntity:memberEntityList){
+            memberDtoList.add(MemberDto.updateMemberDto(memberEntity));
+        }
+        return memberDtoList;
     }
 }
