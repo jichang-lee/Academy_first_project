@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
@@ -16,7 +17,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurity {
 
     private final UserDetailSecurity userDetailSecurity;
-
+    private final AuthenticationFailureHandler customFailHandler;
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.csrf().disable(); //페이지 보안 설정 Exception 예외 처리 필수
@@ -33,8 +34,9 @@ public class WebSecurity {
                 .loginProcessingUrl("/login")                       //로그인 form에서 실행 POST
                 .usernameParameter("email")                         //로그인시 아이디
                 .passwordParameter("password")                      //로그인시 비밀번호
+                .failureHandler(customFailHandler)                  //실패시 핸들러
                 .defaultSuccessUrl("/")                             //로그인 성공시 url
-                .failureForwardUrl("/member/fail")                  //로그인 실패시 url
+//              .failureForwardUrl("fail")                          //로그인 실패시 url
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))     //logout 입력시 security 로그아웃

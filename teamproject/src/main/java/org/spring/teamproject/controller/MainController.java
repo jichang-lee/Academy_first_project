@@ -7,6 +7,8 @@ import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.repository.ItemRepository;
 import org.spring.teamproject.service.ItemService;
 import org.spring.teamproject.service.MemberService;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -55,8 +57,15 @@ public class MainController {
         return rs;
     }
     @GetMapping("/login")                               //로그인
-    public String login() {
-        System.out.println("로그인 성공");
+    public String login(@RequestParam(value = "error" ,required = false ) String error,
+                        @RequestParam(value = "exception" ,required = false)String exception,
+                        Model model) {
+    model.addAttribute("error",error);
+    model.addAttribute("exception",exception);
+
         return "/pages/member/login";
     }
+
+
+
 }
