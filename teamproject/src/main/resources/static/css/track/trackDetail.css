@@ -1,20 +1,28 @@
 @import url(/css/common/reset.css);
 @import url(/css/common/footer.css);
 @import url(/css/common/header.css);
+@import url(/css/common/chat-bot.css);
 /* itemDetail */
+
+body {
+	background: linear-gradient(rgba(28, 27, 21, 0.5), rgba(0, 0, 0, 0)),
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
 .container {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	background: linear-gradient(rgba(28, 27, 21, 0.5), rgba(0, 0, 0, 0)),
-		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	/*background: linear-gradient(rgba(28, 27, 21, 0.5), rgba(0, 0, 0, 0)),
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));*/
 }
 .container .container-con {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* background: linear-gradient(rgba(28, 27, 21, 0.5), rgba(0, 0, 0, 0)),
+  		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)); */
 }
 .container .container-con .track-detail-top {
 	width: 100%;
@@ -152,8 +160,7 @@
 }
 .container .container-con .track-detail-top .detail-top .top-left .action-tags {
 	margin-top: 10px;
-	display: flex;
-	justify-content: space-between;
+	width: 100%;
 }
 .container
 	.container-con
@@ -163,8 +170,9 @@
 	.action-tags
 	.action {
 	display: flex;
+	justify-content: space-between;
 	height: 40px;
-	min-width: 150px;
+	width: 100%;
 }
 .container
 	.container-con
@@ -175,7 +183,7 @@
 	.action
 	.action1 {
 	height: 40px;
-	width: 100%;
+	width: 150px;
 	display: flex;
 	justify-content: center;
 	line-height: 40px;
@@ -192,15 +200,16 @@
 	.action
 	.action1
 	button {
-	width: 100px;
+	width: 100%;
 	font-size: 14px;
 	font-weight: bold;
 	display: flex;
-	background-color : #000000;
+	background-color: #000000;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
 	color: #ffffff;
+	border-radius: 3px;
 	transform: translateY(1px);
 }
 .container

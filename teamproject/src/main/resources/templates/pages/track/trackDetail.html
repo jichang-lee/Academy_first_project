@@ -8,6 +8,14 @@
   <title>itemDetail</title>
   <link rel="stylesheet" href="/css/track/trackDetail.css">
   <script src="/js/track/trackDetail.js" defer></script>
+<script src="/js/common/header.js" defer></script>
+  <script src="/js/common/footer.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+  <!-- 필수 js -->
+  <script th:src="@{/webjars/sockjs-client/sockjs.min.js}" defer></script>
+  <!-- 필수 js -->
+  <script th:src="@{/webjars/stomp-websocket/stomp.min.js}" defer></script>
+  <script th:src="@{/js/common/chat.js}" defer></script>
 </head>
 
 <body>
@@ -76,7 +84,7 @@
               </ul>
             </div>
             <div class="introduction">
-              <ul th:each="list: ${dto}">
+              <ul th:each="list: ${itemDto}">
                 <li><img src="/img/track/music.png" alt=""></li>
                 <li th:text="${list.title}"></li>
                 <li th:text="${list.duration}"></li>
@@ -148,12 +156,15 @@
             sapiente repellat. Error odio dolorum aspernatur aliquam molestiae reiciendis, architecto, enim doloremque
             voluptatum amet, quisquam odit quo.
 
+         </div>
           </div>
         </div>
       </div>
+      <div class="chat" th:replace="/pages/common/chatBot :: chatBot"></div>
     </div>
   </div>
-<div class="footer" th:replace="/pages/common/Footer :: footer"></div>
+
+      <div class="footer" th:replace="/pages/common/Footer :: footer"></div>
 </body>
 
 </html>

@@ -2,26 +2,26 @@ const track = document.querySelector(".track");
 const artist = document.querySelector(".artist");
 const introduction1 = document.querySelector(".introduction1");
 const introduction2 = document.querySelector(".introduction2");
-const hide = "on";
+const on = "on";
 const shadow = "active";
 
 function trackFn() {
 	if (
-		!introduction2.classList.contains(hide) &&
-		introduction1.classList.contains(hide)
+		!introduction2.classList.contains(on) &&
+		introduction1.classList.contains(on)
 	) {
-		introduction1.classList.remove(hide);
-		introduction2.classList.add(hide);
+		introduction1.classList.remove(on);
+		introduction2.classList.add(on);
 	}
 }
 
 function artistFn() {
 	if (
-		!introduction1.classList.contains(hide) &&
-		introduction2.classList.contains(hide)
+		!introduction1.classList.contains(on) &&
+		introduction2.classList.contains(on)
 	) {
-		introduction1.classList.add(hide);
-		introduction2.classList.remove(hide);
+		introduction1.classList.add(on);
+		introduction2.classList.remove(on);
 	}
 }
 
@@ -59,10 +59,4 @@ Array.from(document.querySelectorAll(".material-ripple")).forEach((a) => {
 				ripple.parentNode.removeChild(ripple);
 			}, 500);
 	});
-});
-
-
-let userCart =  document.querySelector("#userCart");
-userCart.addEventListener("click",()=>{
-    alert("장바구니에 등록 되었습니다.")
 });

@@ -1,4 +1,5 @@
 let filters = document.querySelectorAll(".filters");
+let list = document.querySelectorAll(".items ul li");
 
 function changeSelect(event) {
 	// console.log(event.target.value);
@@ -11,11 +12,34 @@ function changeSelect(event) {
 		if (idx == 1) s2 = el.children[0].value;
 		if (idx == 2) s3 = el.children[0].value;
 	});
+	console.log("s1 :" + s1, "s2 :" + s2, "s3 :" + s3);
+
+	// for (i = 0; i < bpm.length; i++) {
+	// 	let bpm = 0;
+	// 	if (s1 === bpm[i].content && s2 === null && s3 === null) {
+	// 		filters.style.display = "flex";
+	// 	} else {
+	// 		filters.style.display = "none";
+	// 	}
+	// }
+	for (i = 0; i < genre.length; i++) {
+		if (s2 === genre[i].content && s1 == null && s3 == null) {
+			list.style.display = "flex";
+		} else {
+			list.style.display = "none";
+		}
+	}
+	// for (i = 0; i < price.length; i++) {
+	// 	console.log("price :" + price[i].textContent);
+	// }
 }
-let userCart =  document.querySelector("#userCart");
-userCart.addEventListener("click",()=>{
-    alert("장바구니에 등록 되었습니다.")
-});
+
+let bpm = document.querySelectorAll(".bpm");
+let genre = document.querySelectorAll(".genre");
+let price = document.querySelectorAll(".price");
+
+let i = 0;
+
 //function searchTracksAjax() {
 //	const listNumber = document.querySelector("#listNumber").value;
 //

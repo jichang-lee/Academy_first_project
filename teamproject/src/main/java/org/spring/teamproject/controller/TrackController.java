@@ -101,14 +101,15 @@ public class TrackController {
 //    // track 상세목록
 //    @GetMapping("/trackDetail/{no}")
 //    public String trackDetail(@PathVariable("no") long no, Model model){
-//        ItemDto dto=itemService.trackDetail(no);
-//
-//        if(dto!= null){
-//            model.addAttribute("dto",dto);
-//            return "pages/track/trackDetail";
-//        }else{
-//            return null;
-//        }
+//         List<ItemDto> itemDto=itemService.trackDetailRandom(no);
+
+        if(dto!= null){
+            model.addAttribute("dto",dto);
+            model.addAttribute("itemDto",itemDto);
+            return "pages/track/trackDetail";
+        }else{
+            return null;
+        }
 //
 //    }
 

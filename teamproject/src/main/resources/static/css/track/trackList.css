@@ -1,6 +1,7 @@
 @import url(/css/common/reset.css);
 @import url(/css/common/footer.css);
 @import url(/css/common/header.css);
+@import url(/css/common/chat-bot.css);
 /* tracks */
 
 .container {
@@ -190,29 +191,6 @@
 	margin-right: 35px;
 	cursor: default;
 }
-/*이지창*/
-.container .item-con .item .items ul > li > form > a {
-    text-decoration: none;
-
-    text-align: center;
-    display: flex;
-    color: white;
-}
-
-.container .item-con .item .items ul > li > form{
-    text-align : center;
-    display : flex;
-    align-items : center;
-}
-.container .item-con .item .items ul > li > form > button {
-text-decoration: none;
-    text-align: center;
-    display: flex;
-    color: white;
-    background-color : black;
-}
-
-/*이지창*/
 .container .item-con .item .items ul > a > li {
 	width: auto;
 }
@@ -260,7 +238,7 @@ text-decoration: none;
 	height: 20px;
 	line-height: 20px;
 	margin-right: 15px;
-	transform: translateY(8px); /*0307-이지창->(원래4px)*/
+	transform: translateY(4px);
 }
 .container .item-con .item .paging {
 	width: 100%;

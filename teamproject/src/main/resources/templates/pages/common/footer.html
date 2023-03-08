@@ -9,16 +9,14 @@
     <div class="footer-con">
         <div class="detail-con">
             <div class="logo">
-                <a href="">
-                    <h1>Logo</h1>
-                </a>
+                <a th:href="@{/}"><img src="/img/common/head/logo.png" alt="LogoImage"></a>
             </div>
 
             <ul class="contactInfo">
                 <li>
                     <ul>
-                        <li><a th:href="@{#}">Home</a></li>
-                        <li><a th:href="@{#}">Tracks</a></li>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li><a th:href="@{/trackList}">Tracks</a></li>
                         <li><a th:href="@{#}">Works</a></li>
                     </ul>
                 </li>

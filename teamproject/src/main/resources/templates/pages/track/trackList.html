@@ -2,14 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <link rel="shortcut icon" type="image/png" th:href="@{/img/common/head/infinity.png}" />
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>itemList</title>
   <link rel="stylesheet" href="/css/track/trackList.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-   <script src="/js/track/trackList.js" defer></script>
+  <script src="/js/track/trackList.js" defer></script>
+  <script src="/js/common/header.js" defer></script>
+  <script src="/js/common/footer.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+  <!-- 필수 js -->
+  <script th:src="@{/webjars/sockjs-client/sockjs.min.js}" defer></script>
+  <!-- 필수 js -->
+  <script th:src="@{/webjars/stomp-websocket/stomp.min.js}" defer></script>
+  <script th:src="@{/js/common/chat.js}" defer></script>
 </head>
 
 <body>
@@ -122,6 +129,7 @@
               <a th:href="${list.last} ? '#' : @{/trackList}">>></a>
         </div>
       </div>
+<div class="chat" th:replace="/pages/common/chatBot :: chatBot"></div>
     </div>
   </div>
 <div class="footer" th:replace="/pages/common/Footer :: footer"></div>

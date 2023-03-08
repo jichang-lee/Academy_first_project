@@ -22,6 +22,14 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.footer .footer-con .detail-con .logo{
+    width: auto;
+    height: 50px;
+}
+.footer .footer-con .detail-con .logo a img{
+    width: 100%;
+    height: 50px;
+}
 
 /* contactInfo의 자리 배치 */
 

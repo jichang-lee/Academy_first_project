@@ -76,6 +76,21 @@ public class ItemService {
             return null;
         }
     }
+
+    //트랙 상세목록 10개
+    public List<ItemDto> trackDetailRandom(long no) {
+        List<ItemDto> itemDtoList=new ArrayList<>();
+
+        List<ItemEntity> itemEntityList=itemRepository.findTop10ByNoNotOrderByNoAsc(no);
+
+        for(ItemEntity itemEntity:itemEntityList){
+            itemDtoList.add(ItemDto.toItemDto(itemEntity));
+        }
+        return itemDtoList;
+
+
+    }
+
     //트랙 수정
     public ItemDto trackUpdate(long no) {
         Optional<ItemEntity> itemEntity=itemRepository.findByNo(no);
