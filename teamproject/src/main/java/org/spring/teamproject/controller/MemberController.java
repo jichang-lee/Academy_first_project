@@ -41,11 +41,5 @@ public class MemberController {
         System.out.println("회원탈퇴 성공");
         return "redirect:/logout";
     }
-    @GetMapping("/memberList")
-    public String memberList(Model model){
-        List<MemberDto> memberList=memberService.memberListDo();
-        model.addAttribute("memberList",memberList);
-        return "/pages/member/memberList";
-    }
 
 }

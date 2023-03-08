@@ -1,7 +1,7 @@
-@import url(/css/common/reset.css);
-@import url(/css/admin/adminHeader.css);
-@import url(/css/admin/adminLeftNavContainer.css);
-@import url(/css/admin/adminRightContainer.css);
+@import url(../common/reset.css);
+@import url(adminHeader.css);
+@import url(adminLeftNavContainer.css);
+@import url(adminRightContainer.css);
 
 /* Admin 페이지에서는 adminArtistHeader, 메인, footer의 row-gap을 줄인다. */
 body{

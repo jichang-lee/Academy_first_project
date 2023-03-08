@@ -5,7 +5,7 @@
     <script src="/js/admin/admin.js" defer></script>
 </head>
 
-<div class="adminHeader" th:insert="/pages/common/adminHeader :: adminHeader">
+<!--<div class="adminHeader" th:insert="/pages/common/adminHeader :: adminHeader">-->
     <div class="adminHeader-con" th:fragment="adminHeader">
         <div class="gnb">
             <div class="logo"><a th:href="@{/home}"><img src="/img/common/head/infinity.png"
@@ -42,7 +42,8 @@
                                             <ul id="members-con-lists">
                                                 <li><a href="#">- 회원 입력</a></li>
                                                 <li><a href="#">- 회원 정보 수정</a></li>
-                                                <li><a href="#">- 전체 회원 조회</a></li>
+                                                <li><a th:href="@{/admin/memberList}">- 전체 회원 조회</a></li>
+
                                                 <!-- <li><a href="#">- Members Delete pag</a></li> -->
                                             </ul>
                                         </div>
@@ -100,4 +101,4 @@
             </div>
         </div>
     </div>
-</div>
+</html>
