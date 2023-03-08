@@ -8,6 +8,9 @@ import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.entity.MemberEntity;
 import org.spring.teamproject.service.CartService;
 import org.spring.teamproject.service.ItemService;
+import org.spring.teamproject.service.MemberService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +28,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CartController {
 
-//    private final MemberService memberService;
+    private final MemberService memberService;
     private final ItemService itemService;
     private final CartService cartService;
 
@@ -35,12 +38,15 @@ public class CartController {
 
     @GetMapping("/cart")
     public String cartView( Model model){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
+        MemberDto memberDto = memberService.memberDetail(email);
 
 
         List<CartItemDto> cartItemDtos= cartService.cartVIew();
 
         model.addAttribute("cartItem",cartItemDtos);
-
+        model.addAttribute("member",memberDto.getUserName());
         return "pages/member/myitem";
     }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <script src="/js/common/header.js" defer></script>
@@ -32,7 +33,7 @@
                         </div>
                     </li>
                     <li class="li-last">
-                        <a th:href="@{/#}">
+                        <a th:href="@{/cart}"sec:authorize="hasAnyRole('ADMIN','MEMBER')" >
                             <img src="/img/common/head/shopping-bag.png" alt="shoppingBag">
                         </a>
                         <a th:href="@{/#}">
