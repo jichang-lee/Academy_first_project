@@ -91,26 +91,18 @@
 .container-con .user-up{
     padding: 17px;
 }
-
 .user-up button{
-    width: 300px;
-    height: 40px;
-    background-color: black;
-
+    background-color: rgba(163, 166, 169, 0.752);
     border: none;
     transition: all 0.3s;
     font-family: Poppins,Helvetica,sans-serif;
     font-weight: bold;
-    padding: 10px;
-
-}
-
-.user-up button a{
-    color: white;
+    padding: 4px;
+    border-radius: 12px
 }
 
 .user-up button a:hover{
-    background-color: black;
+    background-color: rgb(19, 3, 3);
     color: white;
     transition: all 0.3s;
 }
