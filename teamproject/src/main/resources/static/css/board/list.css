@@ -13,7 +13,6 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .container .container-con {
@@ -23,7 +22,6 @@
   flex-direction: column;
   padding: 5px 20px;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .container .container-con .title {
@@ -31,23 +29,20 @@
   text-align: center;
   font-family: "Poppins", Helvetica, sans-serif;
   font-weight: 900;
-  font-size: larger;
+  font-size: large;
   margin: 40px 0;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .container .container-con .boardview {
   width: 100;
   flex: 1;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .container .container-con .boardview .boardinfo {
   width: 100%;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .container .container-con .boardview .boardinfo>ul {
@@ -58,7 +53,6 @@
   font-weight: bold;
   font-size: small;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .container .container-con .boardview .boardinfo>ul li {
@@ -113,7 +107,6 @@
   font-family: "Poppins", Helvetica, sans-serif;
   font-size: smaller;
   box-sizing: border-box;
-  /* border: 1px solid #cccccc; */
 }
 
 .container .container-con .boardview .boardlist>ul li:nth-child(1) {
@@ -145,7 +138,7 @@
   padding: 10px;
   box-sizing: border-box;
   position: relative;
-  /* border: 1px solid; */
+  margin: 30px;
 }
 
 .container .container-con .container-end .end-item {
@@ -169,7 +162,6 @@
   font-size: small;
   font-weight: bold;
   box-sizing: border-box;
-  /* border: 1px solid #000000; */
 }
 
 .container .container-con .container-end .end-item .paging {
@@ -208,7 +200,6 @@
   gap: 8px;
   align-items: center;
   box-sizing: border-box;
-  /* border: 1px solid #000000; */
 }
 
 .container .container-con .container-end .end-item .search-form>form>select {
