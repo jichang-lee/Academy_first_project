@@ -46,6 +46,13 @@ public class MainController {
         if (result.hasErrors()) {
             return "/pages/member/join";
         }
+
+//        Admin 입력하기
+        if(memberDto.getEmail().equals("admin@gmail.com")){
+            memberService.insertAdmin(memberDto);
+            return "redirect:/login";
+        }
+
         memberService.insertMember(memberDto);
         System.out.println("회원가입 성공");
         return "redirect:/login";

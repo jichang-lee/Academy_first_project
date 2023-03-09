@@ -6,9 +6,19 @@
   <title>MODIFY</title>
   <link rel="stylesheet" th:href="@{/css/common/reset.css}">
   <link rel="stylesheet" th:href="@{/css/board/updateView.css}">
+  <!-- 필수 js -->
+  <script src="/js/common/header.js" defer></script>
+  <script src="/js/common/footer.js" defer></script>
+  <script th:src="@{/webjars/sockjs-client/sockjs.min.js}" defer></script>
+  <script th:src="@{/webjars/stomp-websocket/stomp.min.js}" defer></script>
+  <script th:src="@{/js/common/chat.js}" defer></script>
+  <!-- 필수 js -->
 </head>
 
 <body>
+
+<div class="header" th:replace="/pages/common/Header :: header"></div>
+
   <div class="container">
     <div class="container-con">
 
@@ -56,6 +66,9 @@
 
     </div>
   </div>
+
+
+<div class="footer" th:replace="/pages/common/Footer :: footer"></div>
 </body>
 
 </html>

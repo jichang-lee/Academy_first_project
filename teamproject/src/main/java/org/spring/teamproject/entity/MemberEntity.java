@@ -40,11 +40,11 @@ public class MemberEntity extends BaseEntity{
     @OneToMany(mappedBy = "item_member",cascade = CascadeType.REMOVE)
     private List<ItemEntity> itemEntityList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "board_member",cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "boardJoinMember",cascade = CascadeType.REMOVE)
     private List<BoardEntity> boardEntityList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "reply_member",cascade = CascadeType.REMOVE)
-    private List<ReplyEntity> replyEntityList= new ArrayList<>();
+//    @OneToMany(mappedBy = "reply_member",cascade = CascadeType.REMOVE)
+//    private List<ReplyEntity> replyEntityList= new ArrayList<>();
     //@OneToOne
     //text
 
@@ -62,6 +62,22 @@ public class MemberEntity extends BaseEntity{
 
         return memberEntity;
     }
+
+    public static MemberEntity adminEntity(MemberDto memberDto,
+                                            PasswordEncoder passwordEncoder){
+        MemberEntity memberEntity=new MemberEntity();
+
+        memberEntity.setNo(memberDto.getNo());
+        memberEntity.setEmail(memberDto.getEmail());
+        memberEntity.setPassword(passwordEncoder.encode(memberDto.getPassword()));
+        memberEntity.setAddress(memberDto.getAddress());
+        memberEntity.setUserName(memberDto.getUserName());
+        memberEntity.setPhone(memberDto.getPhone());
+        memberEntity.setRole(Role.ADMIN);
+
+        return memberEntity;
+    }
+
     public static MemberEntity updateMemberEntity(MemberDto memberDto,PasswordEncoder passwordEncoder){
         MemberEntity memberEntity=new MemberEntity();
         //id정보

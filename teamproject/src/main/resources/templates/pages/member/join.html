@@ -23,7 +23,7 @@
                     <li class="s1">Sign Up</li>
 
                     <li class="s2"><input type="email" th:field="*{email}" name="email" id="email" placeholder="Enter Email"
-                                          class="text" minlength="4" maxlength="15">
+                                          class="text" minlength="4" maxlength="30">
                         <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
                         <input type="button" value="중복확인" id="emailChecked">
                     </li>

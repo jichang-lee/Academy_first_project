@@ -25,6 +25,13 @@ public class MemberService {
         MemberEntity memberEntity= MemberEntity.memberEntity(memberDto,passwordEncoder);
         memberRepository.save(memberEntity);
     }
+    @Transactional  // admin추가
+    public void insertAdmin(MemberDto memberDto) {
+        MemberEntity memberEntity= MemberEntity.adminEntity(memberDto,passwordEncoder);
+        memberRepository.save(memberEntity);
+    }
+
+
     @Transactional              //회원가입 이메일 중복체크
     public int findByUserNameDo(String email) {
         Optional<MemberEntity> memberEntity =memberRepository.findByEmail(email);
@@ -68,4 +75,7 @@ public class MemberService {
         }
         return memberDtoList;
     }
+
+
+
 }

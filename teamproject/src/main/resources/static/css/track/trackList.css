@@ -191,30 +191,6 @@
 	margin-right: 35px;
 	cursor: default;
 }
-
-/*이지창*/
-.container .item-con .item .items ul > li > form > a {
-    text-decoration: none;
-
-    text-align: center;
-    display: flex;
-    color: white;
-}
-
-.container .item-con .item .items ul > li > form{
-    text-align : center;
-    display : flex;
-    align-items : center;
-}
-.container .item-con .item .items ul > li > form > button {
-text-decoration: none;
-    text-align: center;
-    display: flex;
-    color: white;
-    background-color : black;
-}
-
-/*이지창*/
 .container .item-con .item .items ul > a > li {
 	width: auto;
 }

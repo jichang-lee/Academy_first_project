@@ -1,7 +1,17 @@
 package org.spring.teamproject.repository;
 
-import org.spring.teamproject.entity.FileEntity;
+import org.spring.teamproject.entity.BoardFileEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-public interface FileRepository extends JpaRepository<FileEntity,Long> {
+import java.util.Optional;
+
+public interface FileRepository extends JpaRepository<BoardFileEntity, Long> {
+
+//	@Query("")
+//	Optional<BoardFileEntity> findByBoardId(Long no);
+//
+//	@Query("")
+//	void delete(Optional<BoardFileEntity> optionalBoardFile);
+
 }

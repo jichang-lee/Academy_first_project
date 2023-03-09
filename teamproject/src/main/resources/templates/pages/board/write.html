@@ -6,9 +6,18 @@
   <title>WRITE</title>
   <link rel="stylesheet" th:href="@{/css/common/reset.css}">
   <link rel="stylesheet" th:href="@{/css/board/write.css}">
+  <!-- 필수 js -->
+  <script src="/js/common/header.js" defer></script>
+  <script src="/js/common/footer.js" defer></script>
+  <script th:src="@{/webjars/sockjs-client/sockjs.min.js}" defer></script>
+  <script th:src="@{/webjars/stomp-websocket/stomp.min.js}" defer></script>
+  <script th:src="@{/js/common/chat.js}" defer></script>
+  <!-- 필수 js -->
 </head>
 
 <body>
+<div class="header" th:replace="/pages/common/Header :: header"></div>
+
   <div class="container">
     <div class="container-con">
 
@@ -17,7 +26,7 @@
         <form th:action="@{/board/write}" th:object="${boardDto}" method="post" enctype="multipart/form-data">
           <ul>
             <li class="li1">
-              <input type="text" th:field="*{title}" placeholder="TITLE">
+              <input type="text" th:field="*{title}" placeholder="TITLE" required>
             </li>
             <!-- <li class="title-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></li> -->
 
@@ -32,7 +41,7 @@
             </li>
 
             <li class="li3">
-              <textarea name="content" th:field="*{content}" id="content" cols="30" rows="10" placeholder=""></textarea>
+              <textarea name="content" th:field="*{content}" id="content" cols="30" rows="10" placeholder="" required></textarea>
             </li>
             <!-- <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li> -->
 
@@ -51,6 +60,9 @@
 
     </div>
   </div>
+
+
+  <div class="footer" th:replace="/pages/common/Footer :: footer"></div>
 </body>
 
 </html>

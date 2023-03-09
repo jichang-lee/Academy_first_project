@@ -2,22 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
   <meta charset="UTF-8">
   <title>COMMUNITY</title>
   <link rel="stylesheet" th:href="@{/css/common/reset.css}">
   <link rel="stylesheet" th:href="@{/css/board/list.css}">
+  <!-- 필수 js -->
+  <script src="/js/common/header.js" defer></script>
+  <script src="/js/common/footer.js" defer></script>
+  <script th:src="@{/webjars/sockjs-client/sockjs.min.js}" defer></script>
+  <script th:src="@{/webjars/stomp-websocket/stomp.min.js}" defer></script>
+  <script th:src="@{/js/common/chat.js}" defer></script>
+  <!-- 필수 js -->
 </head>
 
 <body>
-  <!-- <div th:replace="~{/pages/common/Header :: header}"></div> -->
+<div class="header" th:replace="/pages/common/Header :: header"></div>
 
   <div class="container">
     <div class="container-con">
 
       <div class="title">
         <!--페이지 타이틀-->
-        <h1><a th:href="@{/board/}">Community</a></h1>
+        <h1>Community</h1>
       </div>
 
       <div class="boardview">
@@ -73,8 +79,8 @@
           <div class="search-form">
             <form th:action="@{/board/search}" method="get">
               <select name="" id="">
-                <option value="title">title</option>
-                <option value="writer">writer</option>
+                <option value="title">TITLE</option>
+                <option value="writer">WRITER</option>
               </select>
               <input type="text" name="search" id="search" class="searchtext" placeholder="Search">
               <input type="image" th:src="@{/img/board/searchicon.png}" alt="" class="submitbtn">
@@ -87,8 +93,7 @@
     </div>
   </div>
 
-  <!-- <div th:replace=" ~{/pages/common/Footer :: footer}">
-        </div> -->
+  <div class="footer" th:replace="/pages/common/Footer :: footer"></div>
 </body>
 
 </html>

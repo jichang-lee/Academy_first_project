@@ -1,7 +1,7 @@
-/* @font-face {
-  font-family: 'Helvetica';
-  src: url('/static/font/Helvetica.ttf') format(‘truetype’);
-} */
+@import url("/css/common/reset.css");
+@import url("/css/common/footer.css");
+@import url("/css/common/header.css");
+@import url("/css/common/chat-bot.css");
 
 .body {
   font-family: "Poppins", Helvetica, sans-serif;

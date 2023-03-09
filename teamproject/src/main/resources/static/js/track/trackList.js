@@ -64,7 +64,3 @@ let i = 0;
 //document.querySelectorAll(".pagingNum").forEach((el, idx) => {
 //	el.addEventListener("click", searchTracksAjax);
 //});
-let userCart =  document.querySelector("#userCart");
-userCart.addEventListener("click",()=>{
-    alert("장바구니에 등록 되었습니다.")
-});

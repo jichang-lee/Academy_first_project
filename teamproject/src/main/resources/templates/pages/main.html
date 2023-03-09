@@ -2,19 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link rel="shortcut icon" type="image/png" th:href="@{/img/common/head/infinity.png}" />
     <meta charset="UTF-8">
     <title>main Index</title>
     <link rel="stylesheet" href="/css/main/main.css">
     <script src="/js/main/main.js" defer></script>
-    <script src="/js/common/header.js" defer></script>
-    <script src="/js/common/footer.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
     <!-- 필수 js -->
+    <script src="/js/common/header.js" defer></script>
+    <script src="/js/common/footer.js" defer></script>
     <script th:src="@{/webjars/sockjs-client/sockjs.min.js}" defer></script>
-    <!-- 필수 js -->
     <script th:src="@{/webjars/stomp-websocket/stomp.min.js}" defer></script>
     <script th:src="@{/js/common/chat.js}" defer></script>
+    <!-- 필수 js -->
 </head>
 
 <body>
