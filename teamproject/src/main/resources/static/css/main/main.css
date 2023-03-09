@@ -263,7 +263,7 @@
 	.changebuttons
 	> div
 	button:nth-child(2):active {
-	background-color: #a8a8a8;
+	background-color: #bababa;
 	border-left: 15px solid #878585;
 	border-top: 10px solid #d3d3d3;
 	border-right: 15px solid #878585;
@@ -288,7 +288,7 @@
 	.changebuttons
 	> div
 	button:nth-child(3):active {
-	background-color: #a8a8a8;
+	background-color: #bababa;
 	border-left: 15px solid #878585;
 	border-top: 10px solid #d3d3d3;
 	border-right: 15px solid #878585;

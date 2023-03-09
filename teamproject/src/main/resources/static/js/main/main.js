@@ -1,6 +1,3 @@
-
-
-//======================================================
 const backwardBtn = document.querySelector(
 	".change-controller .changebuttons>div button:nth-child(1)"
 );
@@ -50,6 +47,5 @@ if(currentPrincipal != null ){
     console.log(`This is the current login name : ${currentPrincipal.value}`);
 	localStorage.setItem("currentPrincipal", currentPrincipal.value);
 
-	
-}
 
+}

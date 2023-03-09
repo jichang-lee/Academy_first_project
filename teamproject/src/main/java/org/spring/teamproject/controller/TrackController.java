@@ -98,31 +98,33 @@ public class TrackController {
         return "pages/track/trackList";
     }
 
-    // track 상세목록
-    @GetMapping("/trackDetail/{no}")
-    public String trackDetail(@PathVariable("no") long no, Model model){
+    /*// track 상세목록
+    @GetMapping("/trackDetail/{itemNo}/{memberNo}")
+    public String trackDetail(@PathVariable("no") long no, @PathVariable("memberNo") Long memberNo, Model model){
          List<ItemDto> itemDto=itemService.trackDetailRandom(no);
+        MemberDto memberDto = cartService.memberDtoSearch(memberNo);
 
         if(itemDto!= null){
             model.addAttribute("dto", itemDto);
             model.addAttribute("itemDto",itemDto);
+            model.addAttribute("member",memberDto);
             return "pages/track/trackDetail";
         }else{
             return null;
-        }
+        }*/
 
-    }
+//    }
 
     @GetMapping("/trackDetail/{itemNo}/{memberNo}")
     public String trackDetail(@PathVariable("itemNo") Long itemNo,@PathVariable("memberNo") Long memberNo, Model model){
 
         ItemDto dto=itemService.trackDetail(itemNo);
         MemberDto memberDto = cartService.memberDtoSearch(memberNo);
-	List<ItemDto> itemDto=itemService.trackDetailRandom(itemNo);	
+        List<ItemDto> itemDto=itemService.trackDetailRandom(itemNo);
         if(dto!= null){
             model.addAttribute("dto",dto);
             model.addAttribute("member",memberDto);
-	model.addAttribute("itemDto",itemDto);
+            model.addAttribute("itemDto",itemDto);
         }
 
         return "pages/track/trackDetail";

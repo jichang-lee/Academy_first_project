@@ -50,4 +50,3 @@ public class WebSecurity {
         return new BCryptPasswordEncoder();
     }
 }
-

@@ -1,23 +1,24 @@
 package org.spring.teamproject.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.spring.teamproject.config.UserDetailSecurity;
 import org.spring.teamproject.dto.ItemDto;
 import org.spring.teamproject.dto.MemberDto;
 import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.repository.ItemRepository;
+import org.spring.teamproject.service.CartService;
 import org.spring.teamproject.service.ItemService;
 import org.spring.teamproject.service.MemberService;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.spring.teamproject.config.UserDetailSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -28,6 +29,7 @@ public class MainController {
 
     private final MemberService memberService;
     private final ItemService itemService;
+    private final CartService cartService;
     private final HttpSecurity httpSecurity;
 
 
@@ -38,8 +40,11 @@ public class MainController {
 
         model.addAttribute("itemDtoList",itemDtoList);
 
+
+
         return "/pages/main";
     }
+
 //=========================================================
     @GetMapping("/memberMain")                    //기본페이지설정
     public String indexMember(Model model) {
@@ -55,6 +60,7 @@ public class MainController {
         return "/pages/memberMain";
     }
 //=======================================================
+
     @GetMapping("/join")                                //회원가입페이지 이동
     public String join(Model model) {
         model.addAttribute("memberDto", new MemberDto());
@@ -66,11 +72,10 @@ public class MainController {
         if (result.hasErrors()) {
             return "/pages/member/join";
         }
-
 //        Admin 입력하기
         if(memberDto.getEmail().equals("admin@gmail.com")){
             memberService.insertAdmin(memberDto);
-            return "redirect:/login";
+            return "/pages/admin/adminindex";
         }
 
         memberService.insertMember(memberDto);
@@ -89,8 +94,6 @@ public class MainController {
                         Model model) {
     model.addAttribute("error",error);
     model.addAttribute("exception",exception);
-
-
 
         return "/pages/member/login";
     }

@@ -1,5 +1,7 @@
 // 댓글에 대한 수정, 삭제를 해당 댓글을 쓴사람만 처리할 수 있게 하기
-const hide = 'hide';
+const hide1 = 'hide';
+
+
 let CommentWriter = document.querySelectorAll('#re_writer');
 let memberActionCon = document.querySelectorAll('.memberAction');
 
@@ -13,12 +15,10 @@ if(localStorage.length == 0){
       memberActionCon.forEach((el, index)=>{
         if(ind == index){
           el.classList.remove(hide);
-        }
       })
     }
   });
 }
-  
 // -------------------------------------------------------------------------------
 // ajax를 사용하여 댓글 입력하기
 
@@ -27,7 +27,7 @@ function commentInsertFn(e) {
 
   let detailPost = document.querySelector('#boardNo').value;
   let commentData = document.querySelector('#commentsInputData').value;
-  let userNameString = localStorage.getItem("currentPrincipal");
+ let userNameString = localStorage.getItem("currentPrincipal");
   const sendDto = {
     boardId: detailPost,
     re_content: commentData,

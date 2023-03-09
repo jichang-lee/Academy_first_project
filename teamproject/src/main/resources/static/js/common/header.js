@@ -25,6 +25,7 @@ function showSearchBar(e) {
 
 magnifier.addEventListener('click', showSearchBar);
 
+
 //==========================================================
 //로그아웃 시, localStorage에 있는 로그인 정보 삭제
 
@@ -41,5 +42,3 @@ if(document.getElementById('logout')){
 //        localStorage.clear();
 //    })
 //}
-
-
