@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <script src="/js/common/header.js" defer></script>
@@ -45,16 +46,14 @@
 <!--                    </li>-->
                 </ul>
             </div>
-            <div class="li-last">
-<!--                <a class="s-img">-->
-<!--                    <img src="/img/common/head/magnifier.png" alt="searchImg" id="magnifier">-->
-<!--                </a>-->
-                <a th:href="@{/#}">
-                    <img src="/img/common/head/shopping-bag.png" alt="shoppingBag">
-                </a>
-                <a th:href="@{/#}">
-                    <img src="/img/common/head/login.png" alt="login">
-                </a>
+            <div class="li-last" sec:authorize="isAnonymous()">
+                <a th:href="@{/login}"><img src="/img/common/head/login.png" alt="login"></a>  <!--로그인a태그   -->
+            </div>
+            <div class="li-last" sec:authorize="isAuthenticated()">
+                 <!--쇼핑백태그-->
+                <a th:href="@{/cart}"><img src="/img/common/head/shopping-bag.png" alt="shoppingBag"></a>
+                <!--마이페이지 a태그-->
+                <a th:href="@{|/member/mypage/${#authentication.principal.username}|}"><img src="/img/common/head/login.png"></a>
             </div>
         </div>
     </div>
