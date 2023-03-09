@@ -60,3 +60,7 @@ Array.from(document.querySelectorAll(".material-ripple")).forEach((a) => {
 			}, 500);
 	});
 });
+let userCart =  document.querySelector("#userCart");
+userCart.addEventListener("click",()=>{
+    alert("장바구니에 등록 되었습니다.")
+});
