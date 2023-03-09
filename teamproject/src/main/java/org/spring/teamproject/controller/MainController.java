@@ -46,7 +46,6 @@ public class MainController {
         if (result.hasErrors()) {
             return "/pages/member/join";
         }
-
 //        Admin 입력하기
         if(memberDto.getEmail().equals("admin@gmail.com")){
             memberService.insertAdmin(memberDto);
@@ -55,6 +54,7 @@ public class MainController {
 
         memberService.insertMember(memberDto);
         System.out.println("회원가입 성공");
+        System.out.println("join :" + memberDto);
         return "redirect:/login";
     }
     @PostMapping("/emailChecked")                        //회원가입 email 중복체크버튼

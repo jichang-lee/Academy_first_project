@@ -81,7 +81,7 @@ public class ItemService {
     public List<ItemDto> trackDetailRandom(long no) {
         List<ItemDto> itemDtoList=new ArrayList<>();
 
-        List<ItemEntity> itemEntityList=itemRepository.findTop10ByNoNotOrderByNoAsc(no);
+        List<ItemEntity> itemEntityList=itemRepository.findTop8ByNoNotOrderByNoAsc(no);
 
         for(ItemEntity itemEntity:itemEntityList){
             itemDtoList.add(ItemDto.toItemDto(itemEntity));

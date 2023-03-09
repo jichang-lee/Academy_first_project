@@ -118,9 +118,11 @@ public class TrackController {
 
         ItemDto dto=itemService.trackDetail(itemNo);
         MemberDto memberDto = cartService.memberDtoSearch(memberNo);
+        List<ItemDto> itemDto=itemService.trackDetailRandom(itemNo);
         if(dto!= null){
             model.addAttribute("dto",dto);
             model.addAttribute("member",memberDto);
+            model.addAttribute("itemDto",itemDto);
         }
 
         return "pages/track/trackDetail";

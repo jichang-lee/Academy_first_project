@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="http://code.jquery.com/jquery-latest.js" defer></script>
+  <script th:src="@{/js/board/eachPost2.js}" defer></script>
+  <link rel="stylesheet" href="/css/board/comment.css">
+  <link rel="stylesheet" href="/css/common/reset.css">
+</head>
+
+<body>
+
+  <div class="comment" th:fragment="commentContainer">
+    <div class="comment-con">
+      <!-- <form th:action="@{|/detail/comment/${no}|}" class="commentInputCon" method="post"> -->
+      <ul class="commentInput">
+        <li>
+          <input name="boardId" id="boardNo" th:value="${detail.no}" hidden="hidden">
+          <input type="text" name="re_content" id="commentsInputData" placeholder="Type comments" size="50" required>
+        </li>
+        <li>
+          <button class="commentSubmit" type="button">WRITE</button>
+        </li>
+      </ul>
+      <!-- </form> -->
+      <!--        comment-data에 hideComment가 들어가야함-->
+      <div class="comment-data">
+        <div class="comment-column">
+          <ul class="column">
+            <li>
+              <div>WHO?</div>
+            </li>
+            <li>
+              <div>🎵</div>
+            </li>
+            <li>
+              <div>TIME</div>
+            </li>
+          </ul>
+        </div>
+        <div class="comment-lists">
+          <ul class="lists" th:each="comment:${detailComments}">
+            <li class="child">
+              <ul id="comments">
+                <li>
+                  <input id="No" name="id" th:value="${comment.id}" readonly>
+                </li>
+                <li>
+                  <textarea id="Re_content" name="re_content" th:text="${comment.re_content}" rows="4"
+                    cols="20"></textarea>
+                </li>
+                <li>
+                  <input id="CreateTime" th:value="${comment.createTime}" readonly>
+                </li>
+                <li>
+                  <button id="update">Update</button>
+                </li>
+                <li>
+                  <button type="button" id="delete">Delete</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -34,8 +34,6 @@ const class1 = document.querySelectorAll(".class1");
 detailMiddle.addEventListener("click", (e) => {
 	class1.forEach((el, idx) => {
 		if (e.target == el.children[0]) {
-			console.log(e.target);
-			console.log(el.children[0] + " << ");
 			el.children[0].classList.add(shadow);
 		} else {
 			el.children[0].classList.remove(shadow);

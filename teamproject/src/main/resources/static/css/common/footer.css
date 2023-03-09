@@ -26,8 +26,13 @@
     width: auto;
     height: 50px;
 }
+.footer .footer-con .detail-con .logo a{
+    width: auto;
+    height: auto;
+    display: block;
+}
 .footer .footer-con .detail-con .logo a img{
-    width: 100%;
+    width: auto;
     height: 50px;
 }
 

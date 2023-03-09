@@ -42,7 +42,7 @@ public class BoardEntity extends BaseEntity {
 	@Column(nullable = false)
 	private int attachFile;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "member_no")
 	private MemberEntity boardJoinMember;
 

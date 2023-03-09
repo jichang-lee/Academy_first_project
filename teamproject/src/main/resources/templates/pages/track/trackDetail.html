@@ -41,15 +41,15 @@
               <div class="time2" th:text="*{#temporals.format(list.createTime, 'yyyy MM, dd')}"></div>
             </div>
             <div class="button" th:each="list: ${dto}">
-              <button><a th:href="@{|/trackUpdate/${list.no}|}">update</a></button>
-              <button><a th:href="@{|/trackDelete/${list.no}|}">delete</a></button>
+              <button sec:authorize="hasRole('ADMIN')"><a th:href="@{|/trackUpdate/${list.no}|}">update</a></button>
+              <button sec:authorize="hasRole('ADMIN')"><a th:href="@{|/trackDelete/${list.no}|}">delete</a></button>
             </div>
             <div class="action-tags">
               <div class="action">
                 <div class="action1" th:each="list: ${dto}">
                   <form th:action="@{|/cart/${memberNo}/${itemNo}|}" method="post">
-                  <button type="submit"id="userCart" ><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
-                      th:text="${list.price}"></button>
+                  <button type="submit" id="userCart" ><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
+                      ><div th:text="${list.price}"></div></button>
                   </form>
                 </div>
               </div>

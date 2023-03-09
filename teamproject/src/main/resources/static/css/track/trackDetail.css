@@ -159,8 +159,9 @@ body {
 	width: 100%;
 }
 .container .container-con .track-detail-top .detail-top .top-left .action-tags {
-	margin-top: 10px;
+	margin-top: 20px;
 	width: 100%;
+	display: flex;
 }
 .container
 	.container-con
@@ -210,7 +211,7 @@ body {
 	gap: 10px;
 	color: #ffffff;
 	border-radius: 3px;
-	transform: translateY(1px);
+	transform: translateY(4px);
 }
 .container
 	.container-con
@@ -236,9 +237,9 @@ body {
 	.action
 	.action1
 	div {
-	font-size: 14px;
 	color: #ffffff;
-	transform: translateY(1px);
+	font-size: 14px;
+	transform: translateY(2px);
 }
 .container
 	.container-con
@@ -263,6 +264,9 @@ body {
 	line-height: 40px;
 	background-color: #000000;
 	border-radius: 20px;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
 	color: #ffffff;
 	padding: 0 15px;
 	font-size: 14px;
