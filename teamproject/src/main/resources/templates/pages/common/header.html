@@ -47,16 +47,18 @@
                 </ul>
             </div>
             <div class="li-last" sec:authorize="isAnonymous()">
-                <div class="li-last">
+
                 <a th:href="@{/login}" sec:authorize="isAnonymous()"><img src="/img/common/head/login.png" alt="login"></a>
                 <!--로그인a태그   -->
                 <a sec:authorize="isAuthenticated()" th:href="@{/logout}" id="logout">Log out</a>
+
             </div>
-            <div class="li-last" sec:authorize="isAuthenticated()">
+
+            <div class="li-last" sec:authorize="isAuthenticated()" >
                  <!--쇼핑백태그-->
                 <a th:href="@{/cart}"><img src="/img/common/head/shopping-bag.png" alt="shoppingBag"></a>
                 <!--마이페이지 a태그-->
-                <a th:href="@{|/member/mypage/${#authentication.principal.username}|}"><img
+                <a th:href="@{|/member/mypage/${#authentication.principal.username}|}" ><img
                         src="/img/common/head/login.png"></a>
             </div>
         </div>

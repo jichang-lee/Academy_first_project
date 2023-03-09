@@ -24,7 +24,7 @@ public class WebSecurity {
         http.userDetailsService(userDetailSecurity);
         //권한설정
         http.authorizeHttpRequests()
-                .antMatchers("/","/item/main,/login,/join","board/main").permitAll()  //모든사용자 접근가능
+                .antMatchers("/","/trackList","/login","/join","board/**").permitAll()  //모든사용자 접근가능
                 .antMatchers("/member/**").authenticated()                            //로그인시 접근가능
                 .antMatchers("/member/**").hasAnyRole("MEMBER","ADMIN")         //MEMBER,ADMIN 권한만접근가능
                 .antMatchers("/admin/**").hasRole("ADMIN");                           //ADMIN 권한만 접근가능
