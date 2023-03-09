@@ -35,8 +35,10 @@ public class WebSecurity {
                 .usernameParameter("email")                         //로그인시 아이디
                 .passwordParameter("password")                      //로그인시 비밀번호
                 .failureHandler(customFailHandler)                  //실패시 핸들러
-                .defaultSuccessUrl("/")                             //로그인 성공시 url
-//              .failureForwardUrl("fail")                          //로그인 실패시 url
+//                ===================================================
+                .defaultSuccessUrl("/memberMain")                             //로그인 성공시 url
+              .failureUrl("/")                          //로그인 실패시 url
+//                ====================================================
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))     //logout 입력시 security 로그아웃

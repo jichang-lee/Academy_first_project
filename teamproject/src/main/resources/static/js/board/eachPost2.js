@@ -1,34 +1,24 @@
 // 댓글에 대한 수정, 삭제를 해당 댓글을 쓴사람만 처리할 수 있게 하기
 const hide = 'hide';
-let loggedInUsername = document.querySelector('#userNameString');
-
-
-
 let CommentWriter = document.querySelectorAll('#re_writer');
 let memberActionCon = document.querySelectorAll('.memberAction');
 
-memberActionCon.forEach((element) => {
-  CommentWriter.forEach((el, index) => {
-
-    if (element.classList.contains(hide)) {
-      if (loggedInUsername.value == null) {
-        el.value = '0';
-        loggedInUsername.value = '1';
-        element.classList.add(hide);
-        
-      } else if(loggedInUsername.value != null) {
-        if (el.value.toString() === loggedInUsername.value.toString()) {
-          element.classList.remove(hide);
-        } else {
-          element.classList.add(hide);
-        }
-      }
-    }
-
+if(localStorage.length == 0){
+  memberActionCon.forEach((el)=>{
+    el.classList.add(hide); 
   })
-
-})
-
+} else {
+  CommentWriter.forEach((el, ind)=>{
+    if(el.value == localStorage.getItem("currentPrincipal")){
+      memberActionCon.forEach((el, index)=>{
+        if(ind == index){
+          el.classList.remove(hide);
+        }
+      })
+    }
+  });
+}
+  
 // -------------------------------------------------------------------------------
 // ajax를 사용하여 댓글 입력하기
 
@@ -37,7 +27,7 @@ function commentInsertFn(e) {
 
   let detailPost = document.querySelector('#boardNo').value;
   let commentData = document.querySelector('#commentsInputData').value;
-  let userNameString = document.querySelector('#userNameString').value;
+  let userNameString = localStorage.getItem("currentPrincipal");
   const sendDto = {
     boardId: detailPost,
     re_content: commentData,

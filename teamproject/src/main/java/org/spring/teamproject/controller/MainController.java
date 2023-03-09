@@ -1,12 +1,17 @@
 package org.spring.teamproject.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.spring.teamproject.config.UserDetailSecurity;
 import org.spring.teamproject.dto.ItemDto;
 import org.spring.teamproject.dto.MemberDto;
 import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.repository.ItemRepository;
 import org.spring.teamproject.service.ItemService;
 import org.spring.teamproject.service.MemberService;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -23,6 +28,7 @@ public class MainController {
 
     private final MemberService memberService;
     private final ItemService itemService;
+    private final HttpSecurity httpSecurity;
 
 
     @GetMapping({"/", "", "/index"})                    //기본페이지설정
@@ -34,7 +40,21 @@ public class MainController {
 
         return "/pages/main";
     }
+//=========================================================
+    @GetMapping("/memberMain")                    //기본페이지설정
+    public String indexMember(Model model) {
 
+        List<ItemDto> itemDtoList=itemService.itemList();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
+        MemberDto memberDto = memberService.memberDetail(email);
+
+        model.addAttribute("itemDtoList",itemDtoList);
+        model.addAttribute("currentPrincipal",memberDto.getEmail());
+
+        return "/pages/memberMain";
+    }
+//=======================================================
     @GetMapping("/join")                                //회원가입페이지 이동
     public String join(Model model) {
         model.addAttribute("memberDto", new MemberDto());
@@ -46,6 +66,7 @@ public class MainController {
         if (result.hasErrors()) {
             return "/pages/member/join";
         }
+
 //        Admin 입력하기
         if(memberDto.getEmail().equals("admin@gmail.com")){
             memberService.insertAdmin(memberDto);
@@ -54,7 +75,6 @@ public class MainController {
 
         memberService.insertMember(memberDto);
         System.out.println("회원가입 성공");
-        System.out.println("join :" + memberDto);
         return "redirect:/login";
     }
     @PostMapping("/emailChecked")                        //회원가입 email 중복체크버튼
@@ -69,6 +89,8 @@ public class MainController {
                         Model model) {
     model.addAttribute("error",error);
     model.addAttribute("exception",exception);
+
+
 
         return "/pages/member/login";
     }

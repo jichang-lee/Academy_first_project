@@ -21,15 +21,13 @@
                     <li class="s2"><input type="text" name="email" id="email" placeholder="Enter Email" aria-label="이메일 입력"
                                           class="text" minlength="4" maxlength="30">
                     </li>
+                    <input th:value="${currentPrincipal}" hidden="hidden" id="currentPrincipal">
                     <li class="s2"><input type="password" name="password" id="password" placeholder="Enter Password"
                                           aria-label="비밀번호" class="text" minlength="4" maxlength="10">
                     </li>
                     <span th:if="error">
                         <p id="valid" style="color:#ff0000; font-size:12px;" th:text="${exception}"></p>
                     </span>
-<!--                    <a th:text="${exception}"></a>-->
-
-
                     <li class="s4">
                         <input type="submit" class="loginOk" value="sign in">
                     </li>

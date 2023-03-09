@@ -209,14 +209,16 @@
 text-decoration: none;
     text-align: center;
     display: flex;
+    color: white;
     background-color : black;
-    gap:10px;
+    gap: 10px;
 }
 .container .item-con .item .items ul > li > form > button > div {
     transform: translateY(4px);
     font-size: 14px;
     color: #ffffff;
 }
+
 /*이지창*/
 .container .item-con .item .items ul > a > li {
 	width: auto;
@@ -267,7 +269,6 @@ text-decoration: none;
 	margin-right: 15px;
 	transform: translateY(8px);
 }
-
 .container .item-con .item .paging {
 	width: 100%;
 	height: auto;

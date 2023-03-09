@@ -114,12 +114,6 @@ public class BoardController {
   @GetMapping("/detail/{no}")
   public String boardDetail(@PathVariable Long no, Model model) {
 
-    // 로그인 한 사람만 게시글 쓸 수 있게 하기
-
-
-
-
-
     boardService.upViewCount(no); //조회수 증가 처리
     BoardDto boardDto = boardService.boardDetailView(no);
 
