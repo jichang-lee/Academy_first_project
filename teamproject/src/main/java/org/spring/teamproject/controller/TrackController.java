@@ -102,16 +102,16 @@ public class TrackController {
 //    @GetMapping("/trackDetail/{no}")
 //    public String trackDetail(@PathVariable("no") long no, Model model){
 //         List<ItemDto> itemDto=itemService.trackDetailRandom(no);
-
-        if(dto!= null){
-            model.addAttribute("dto",dto);
-            model.addAttribute("itemDto",itemDto);
-            return "pages/track/trackDetail";
-        }else{
-            return null;
-        }
 //
-//    }
+//        if(dto!= null){
+//            model.addAttribute("dto",dto);
+//            model.addAttribute("itemDto",itemDto);
+//            return "pages/track/trackDetail";
+//        }else{
+//            return null;
+//        }
+//
+////    }
 
     @GetMapping("/trackDetail/{itemNo}/{memberNo}")
     public String trackDetail(@PathVariable("itemNo") Long itemNo,@PathVariable("memberNo") Long memberNo, Model model){

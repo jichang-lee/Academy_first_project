@@ -18,7 +18,7 @@ public interface ItemRepository extends JpaRepository<ItemEntity,Long> {
     Optional<ItemEntity> findByNo(Long no);
 
 //    @Query(value = "select i from ItemEntity i where i.no<>:no order by rand() limit 10")
-    List<ItemEntity> findTop10ByNoNotOrderByNoAsc(Long no)
+    List<ItemEntity> findTop10ByNoNotOrderByNoAsc(Long no);
 
     Optional<ItemEntity> deleteByNo(Long no);
 

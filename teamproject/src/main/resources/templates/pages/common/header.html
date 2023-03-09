@@ -49,7 +49,7 @@
 <!--                <a class="s-img">-->
 <!--                    <img src="/img/common/head/magnifier.png" alt="searchImg" id="magnifier">-->
 <!--                </a>-->
-                <a th:href="@{/#}">
+                <a th:href="@{/cart}"sec:authorize="hasAnyRole('ADMIN','MEMBER')" >
                     <img src="/img/common/head/shopping-bag.png" alt="shoppingBag">
                 </a>
                 <a th:href="@{/#}">
