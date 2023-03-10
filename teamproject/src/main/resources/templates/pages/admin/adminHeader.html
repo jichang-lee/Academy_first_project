@@ -8,7 +8,7 @@
 <!--<div class="adminHeader" th:insert="/pages/common/adminHeader :: adminHeader">-->
     <div class="adminHeader-con" th:fragment="adminHeader">
         <div class="gnb">
-            <div class="logo"><a th:href="@{/home}"><img src="/img/common/head/infinity.png"
+            <div class="logo"><a th:href="@{/home}"><img src="/img/common/head/logo.png"
                         alt="LogoImage"></a>
             </div>
             <div class="main-menu-con">
@@ -17,13 +17,13 @@
                         <div class="li-con">
                             <div class="left-menu">
                                 <ul>
-                                    <li><a th:href="@{/page/itemList}">Tracks</a>
+                                    <li><a th:href="@{/trackList}">Tracks</a>
                                         <div class="topMenuOptions hideLeftNavContents">
                                             <ul id="track-con-lists">
-                                                <li><a href="#">- 새로운 트랙 넣기</a></li>
-                                                <li><a href="#">- 트랙 정보 수정</a></li>
+                                                <li><a th:href="@{/trackAdd}">- 새로운 트랙 넣기</a></li>
+                                                <li><a th:href="@{/trackUpdate}">- 트랙 정보 수정</a></li>
                                                 <li><a href="#">- 나의 트랙</a></li>
-                                                <li><a href="#">- 전체 트랙</a></li>
+                                                <li><a th:href="@{/trackList}">- 전체 트랙</a></li>
                                             </ul>
                                         </div>
                                     </li>

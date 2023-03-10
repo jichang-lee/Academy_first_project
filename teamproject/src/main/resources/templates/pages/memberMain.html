@@ -17,9 +17,10 @@
 </head>
 
 <body>
-
+    <!-- 헤더   -->
     <div class="header" th:replace="/pages/common/Header :: header"></div>
     <input th:value="${currentPrincipal}" hidden="hidden" id="currentPrincipal">
+    <!--  메인  -->
     <div class="main">
         <div class="main-con">
             <div class="imageChange">
@@ -86,7 +87,7 @@
         <div class="chat" th:replace="/pages/common/chatBot :: chatBot"></div>
     </div>
     </div>
-
+    <!-- 푸터  -->
     <div class="footer" th:replace="/pages/common/Footer :: footer"></div>
 
 </body>

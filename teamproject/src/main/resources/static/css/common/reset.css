@@ -13,10 +13,6 @@ body {
 	height: auto;
 
 	/* header, footer, 그리고 메인 내용과의 간격 정리 */
-	display: flex;
-	background-color: transparent;
-	flex-direction: column;
-	row-gap: 100px;
 }
 a {
 	text-decoration: none;

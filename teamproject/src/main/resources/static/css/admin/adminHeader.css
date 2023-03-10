@@ -22,11 +22,11 @@
     justify-content: space-between;
 }
 .adminHeader .adminHeader-con .gnb .logo{
-    width: 50px;
+    width: auto;
     height: 50px;
 } 
 .adminHeader .adminHeader-con .gnb .logo a img{
-    width: 100%;
+    width: auto%;
     height: 50px;
     display: block
 }
