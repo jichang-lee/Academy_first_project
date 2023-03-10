@@ -15,7 +15,8 @@ if(localStorage.length == 0){
       memberActionCon.forEach((el, index)=>{
         if(ind == index){
           el.classList.remove(hide);
-      })
+      }
+    })
     }
   });
 }
