@@ -62,7 +62,7 @@ public class CartController {
 
         cartService.cartAdd(memberEntity,itemEntity);
 
-        return "redirect:/trackList";
+        return "redirect:/cart";
     }
 
 

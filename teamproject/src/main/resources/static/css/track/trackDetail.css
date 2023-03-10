@@ -13,8 +13,9 @@ body {
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	/*background: linear-gradient(rgba(28, 27, 21, 0.5), rgba(0, 0, 0, 0)),
-		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));*/
+	padding: 150px 0;
+	/*background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+		linear-gradient(rgba(28, 27, 21, 0.5), rgba(0, 0, 0, 0));*/
 }
 .container .container-con {
 	width: 100%;
@@ -349,7 +350,7 @@ body {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	height: 460px;
+
 }
 .container .container-con .track-detail-bottom .detail-bottom .item-filter ul {
 	height: 30px;

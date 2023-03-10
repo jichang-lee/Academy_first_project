@@ -17,10 +17,9 @@
 </head>
 
 <body>
-    <!-- 헤더   -->
     <div class="header" th:replace="/pages/common/Header :: header"></div>
     <input th:value="${currentPrincipal}" hidden="hidden" id="currentPrincipal">
-    <!--  메인  -->
+
     <div class="main">
         <div class="main-con">
             <div class="imageChange">
@@ -31,26 +30,28 @@
                     <!-- <li><a href="#"><img src="/img/main/main3.jpg" alt="main3"></a></li> -->
                     <!-- <li><a href="#"><img src="/img/main/main4.jpg" alt="main4"></a></li> -->
                 </ul>
-                <div class="albumShortInfo-con">
-                    <ul class="albumShortInfo">
-                        <li id="title">How deep is your love</li>
-                        <li id="singer">Calvin Harris & Disciples</li>
-                    </ul>
-                </div>
-                <div class="change-controller">
-                    <div class="changebuttons">
-                        <div>
-                            <button type="button">
-                                <div id="t1"></div>
-                                <div id="t2"></div>
-                            </button>
-                            <button type="button">
-                                <div id="show"></div>
-                            </button>
-                            <button type="button">
-                                <div id="f1"></div>
-                                <div id="f2"></div>
-                            </button>
+                <div class="controller-box">
+                    <div class="albumShortInfo-con">
+                        <ul class="albumShortInfo">
+                            <li id="title">How deep is your love</li>
+                            <li id="singer">Calvin Harris & Disciples</li>
+                        </ul>
+                    </div>
+                    <div class="change-controller">
+                        <div class="changebuttons">
+                            <div>
+                                <button type="button">
+                                    <div id="t1"></div>
+                                    <div id="t2"></div>
+                                </button>
+                                <button type="button">
+                                    <div id="show"></div>
+                                </button>
+                                <button type="button">
+                                    <div id="f1"></div>
+                                    <div id="f2"></div>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,7 +70,11 @@
                     <div class="items">
                         <ul th:each="list: ${itemDtoList}">
                             <li><img src="/img/track/music.png" alt=""></li>
-                            <a th:href="@{|/trackDetail/${list.no}|}">
+                            <a th:if="${member !=null}" th:href="@{|/trackDetail/${list.no}/${member}|}">
+                                <li th:text="${list.title}"></li>
+                            </a>
+
+                            <a th:if="${member ==null}" th:href="@{/login}">
                                 <li th:text="${list.title}"></li>
                             </a>
                             <li th:text="${list.duration}"></li>
@@ -87,8 +92,9 @@
         <div class="chat" th:replace="/pages/common/chatBot :: chatBot"></div>
     </div>
     </div>
-    <!-- 푸터  -->
+
     <div class="footer" th:replace="/pages/common/Footer :: footer"></div>
+
 
 </body>
 

@@ -4,8 +4,9 @@
 .container {
 	width: 1631.14px;
 	height: auto;
-	padding: 20px 40px;
+	padding: 150px 40px;
 	box-sizing: border-box;
+
 }
 .container .container-con {
 	width: 100%;

@@ -13,6 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 150px 0;
+       box-sizing: border-box;
 }
 
 .comment .comment-con {

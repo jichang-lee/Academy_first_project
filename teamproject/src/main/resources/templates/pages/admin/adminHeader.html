@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <script src="/js/admin/admin.js" defer></script>
@@ -8,8 +8,13 @@
 <!--<div class="adminHeader" th:insert="/pages/common/adminHeader :: adminHeader">-->
     <div class="adminHeader-con" th:fragment="adminHeader">
         <div class="gnb">
-            <div class="logo"><a th:href="@{/home}"><img src="/img/common/head/logo.png"
-                        alt="LogoImage"></a>
+            <div class="logo">
+                <a th:href="@{/}" sec:authorize="isAnonymous()">
+                    <img src="/img/common/head/logo.png" alt="LogoImage">
+                </a>
+                <a th:href="@{/memberMain}" sec:authorize="isAuthenticated()">
+                    <img src="/img/common/head/logo.png" alt="LogoImage">
+                </a>
             </div>
             <div class="main-menu-con">
                 <ul>

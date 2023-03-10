@@ -7,14 +7,14 @@ let memberActionCon = document.querySelectorAll('.memberAction');
 
 if(localStorage.length == 0){
   memberActionCon.forEach((el)=>{
-    el.classList.add(hide); 
+    el.classList.add(hide1);
   })
 } else {
   CommentWriter.forEach((el, ind)=>{
     if(el.value == localStorage.getItem("currentPrincipal")){
       memberActionCon.forEach((el, index)=>{
         if(ind == index){
-          el.classList.remove(hide);
+          el.classList.remove(hide1);
       }
     })
     }

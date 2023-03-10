@@ -6,8 +6,8 @@
 .main {
 	width: 100%;
 	height: auto;
-	padding-top: 150px;
-	background: #000;
+	padding: 150px 0 0;
+	background: \linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0)),url(/img/Main/mainBg.jpg);
 }
 
 .main .main-con {
@@ -25,16 +25,19 @@
 	justify-content: center;
 	align-items: center;
 	gap: 50px;
+
 }
 .main .main-con .controller-box{
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 100px;
+    transform: translate(90px,-50px);
 }
 
 .main .main-con .imageChange .imageChange-con {
 	height: auto;
 	height: 500px;
+	transform: translate(-140px,-50px);
 }
 
 .main .main-con .imageChange .imageChange-con li {

@@ -70,7 +70,7 @@
                     <div class="items">
                         <ul th:each="list: ${itemDtoList}">
                             <li><img src="/img/track/music.png" alt=""></li>
-                            <a th:if="${member !=null}" th:href="@{|/trackDetail/${list.no}/${memberNo}|}">
+                            <a th:if="${member !=null}" th:href="@{|/trackDetail/${list.no}/${member}|}">
                                 <li th:text="${list.title}"></li>
                             </a>
 

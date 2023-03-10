@@ -81,15 +81,17 @@
     padding: 0 20px;
 }
 .header .header-con .gnb .main-menu-con>ul>li .li-con .right-menu{
-    width:435px;
+    width:440px;
     align-items: center;
     position:absolute;
     top: 10px;
+    left: 47px;
     display:none;
 }
 .header .header-con .gnb .main-menu-con>ul>li .li-con .right-menu input{
     line-height: 30px;
     padding: 0 20px;
+    width: 100%
 }
 /*.header .header-con .gnb .main-menu-con>ul>li .li-con>div:nth-child(2){
     display: flex;

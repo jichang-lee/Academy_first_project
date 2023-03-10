@@ -11,10 +11,12 @@
   justify-content: center;
   box-sizing: border-box;
   /* border: 1px solid; */
+  padding: 150px 0;
+  box-sizing: border-box;
 }
 
 .container .container-con {
-  margin: 40px;
+/*  margin: 40px;*/
   flex: 0 0 70%;
   display: flex;
   justify-content: center;

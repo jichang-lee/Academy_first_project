@@ -54,8 +54,12 @@ public class MainController {
         String email = authentication.getName();
         MemberDto memberDto = memberService.memberDetail(email);
 
+
+            model.addAttribute("member", memberDto.getNo());
+        System.out.println(memberDto.getNo());
         model.addAttribute("itemDtoList",itemDtoList);
         model.addAttribute("currentPrincipal",memberDto.getEmail());
+
 
         return "/pages/memberMain";
     }

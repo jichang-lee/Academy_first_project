@@ -13,6 +13,8 @@
    display: flex;
    justify-content: center;
    box-sizing: border-box;
+   padding: 150px 0;
+     box-sizing: border-box;
  }
 
  .container .container-con {
@@ -20,7 +22,7 @@
    max-width: 1200px;
    display: flex;
    flex-direction: column;
-   padding: 5px 20px;
+   /*padding: 5px 20px;*/
    box-sizing: border-box;
  }
 
