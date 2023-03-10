@@ -50,5 +50,19 @@ public class MemberDto {
         memberDto.setCreateTime(memberEntity.getCreateTime());
         return memberDto;
     }
+    public static MemberDto adminUpdateDto(MemberEntity memberEntity){
+
+        MemberDto memberDto=new MemberDto();
+
+        memberDto.setNo(memberEntity.getNo());
+        memberDto.setEmail(memberEntity.getEmail());
+        memberDto.setPassword(memberEntity.getPassword());
+        memberDto.setAddress(memberEntity.getAddress());
+        memberDto.setUserName(memberEntity.getUserName());
+        memberDto.setPhone(memberEntity.getPhone());
+        memberDto.setRole(memberEntity.getRole());
+        memberDto.setCreateTime(memberEntity.getCreateTime());
+        return memberDto;
+    }
 
 }

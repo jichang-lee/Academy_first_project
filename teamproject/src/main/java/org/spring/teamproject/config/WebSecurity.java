@@ -37,7 +37,7 @@ public class WebSecurity {
                 .failureHandler(customFailHandler)                  //실패시 핸들러
 //                ===================================================
                 .defaultSuccessUrl("/memberMain")                             //로그인 성공시 url
-              .failureUrl("/")                          //로그인 실패시 url
+//              .failureUrl("/")                          //로그인 실패시 url
 //                ====================================================
                 .and()
                 .logout()

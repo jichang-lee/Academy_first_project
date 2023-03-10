@@ -71,7 +71,7 @@ public class MemberService {
         List<MemberEntity> memberEntityList=memberRepository.findAll();
 
         for (MemberEntity memberEntity:memberEntityList){
-            memberDtoList.add(MemberDto.updateMemberDto(memberEntity));
+            memberDtoList.add(MemberDto.adminUpdateDto(memberEntity));
         }
         return memberDtoList;
     }
